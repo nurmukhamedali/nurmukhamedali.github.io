@@ -1,0 +1,304 @@
+*{
+	scroll-behavior: smooth;
+	box-sizing: border-box;
+}
+body{
+	margin: 0;
+	padding:0;
+	display: grid;
+	grid-template-columns: 1fr;
+	flex-wrap: wrap;
+	width: 100%;
+}
+section{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	font-weight: bold;
+	color: azure;
+}
+nav{
+	position: fixed;
+	width: 100%;
+	top:0;
+	background: #d9f0ffdb;
+	text-transform: uppercase;
+	text-align: center;
+	z-index: 99999;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+}
+nav a{
+	position: relative;
+	color: #000;
+	text-decoration: none;
+	padding: 10px 20px;
+	font-size: 1.6em;
+	display: inline-block;
+	transition: 0.5s ease-in-out;
+}
+nav a:hover,
+section#one:hover ~ nav a[href="#one"],
+section#two:hover ~ nav a[href="#two"],
+section#three:hover ~ nav a[href="#three"],
+section#four:hover ~ nav a[href="#four"]
+{
+	background-color: skyblue;
+	color: #fff;
+}
+::-webkit-scrollbar{
+	width: 0;
+}
+
+#login{
+	position: relative;
+	right: 20px;
+	/*top: 10px;*/
+	bottom: -30px;
+	min-width: 100px;
+}
+
+#login a{
+	background: #d9f0ff;
+	border-radius: 30px;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+}
+
+#login a:hover{
+	background: skyblue;
+	color: white;
+}
+
+#logo{
+	position: relative;
+	left: 20px;
+	top: 30px;
+	background: white;
+	border-radius: 30px;
+	overflow: hidden;
+	border: 3px solid skyblue;
+}
+#logo a{
+	padding: 0;
+	margin: 0;
+}
+#logo a img{
+	width: 150px;
+
+}
+
+
+/* First page style */
+	#one section{
+		font-family: 'Trebuchet MS';
+		background: url('http://www.prointegrate.net/wp-content/uploads/2019/09/eb2ed28ab7b4d5fb653164394796a227.jpg'), linear-gradient(230deg,lightblue, skyblue, lightblue);
+		background-size: cover;
+		background-blend-mode: luminosity;
+		font-size: 300%;
+		color: #fff;
+		z-index: 1;
+		display: grid;
+		align-items: center;
+		grid-template-columns: 100%;
+	}
+	#header-text{
+		display: inline-block;
+		max-width: 
+	}
+	#header-text h2,p{
+		margin: 0;
+		text-align: center;
+		padding: 20px 70px;
+	}
+	#header-text p{
+		/*font-size: 2rem;*/
+	}
+	.skewed{
+		position: relative;
+		bottom: -100%;
+		left:0;
+		min-height: 100%;
+		background: azure;
+		transform: skewY(-10deg);
+		transform-origin: top left;
+		z-index: 1;
+	}
+
+/** Second Page */
+	#two{
+	background: azure;
+	position: relative;
+	z-index: 2;
+	color: #323c45bd;
+	display: flex;
+	height: max-content;
+	padding: 3em 0;
+	}
+	#two #snd-content{
+		display: inline-block;
+		width: inherit;
+		height: 100%;
+	}
+	#two #snd-content h2{
+		/*margin: 100px 10px 40px 10px;*/
+		text-align: center;
+		font-size: 2rem;
+		color: navy;
+		opacity: 0.7;
+	}
+	#two #snd-pics{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 1em;
+		padding: 1em;
+	}
+	#two #snd-pics .img div{
+		overflow: hidden;
+	}
+	#two #snd-pics .img{
+		font-size: 1.2rem;
+		text-align: center;
+	}
+	#two #snd-pics .img img{
+		width: 100%;
+		overflow: hidden;
+
+		transition: 1s ease-in-out;
+	}
+	#two #snd-pics .img img:hover{
+		transform: scale(1.2);
+	}
+/*** Third page*/
+
+	#three{
+		position: relative;
+		z-index: 3;
+		background: #60d399;
+		height: max-content;
+		display: grid;
+		grid-template-columns: auto auto;
+		/*padding: 1em;*/
+	}
+
+	#stats-list{
+		height: max-content;
+		display: grid;
+	 	grid-template-columns: auto auto ;
+	 	list-style-type: none;
+	 	padding: 0;
+	}
+	.stats-list__element{
+		border: 1px solid white;
+		margin: 10px;
+		border-radius: 10px;
+		height: 130px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 300px;
+		transition: 0.5s ease-in-out;
+	}
+	.stats-box{
+		width: 100px;
+	}
+
+	.stats-box h2{
+		font-size: 2rem;
+		margin:0;
+		padding: 0;
+	}
+
+	.stats-list__element:hover{
+		font-size: 90%;
+		transform: scale(1.1);
+		background: white;
+		color: #60d399;
+	}
+
+	#mathematics{
+		/*position: absolute;*/
+		width: 500px;
+		left: -150px;
+		bottom: 0px;
+		transform: rotateZ(-5deg);
+	}
+
+/**** Fourth */
+	#four{
+		background: azure;
+		position: relative;
+		color: darkgray;
+		height: max-content;
+		z-index: 4;
+	}
+	#four #fth-content{
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		padding: 70px;
+	}
+	#fourth-text{
+		font-size: 2rem;
+		display: flex;
+		align-items: center;
+		color: black;
+		font-family: 'Trebuchet MS',sans-serif;
+	}
+	#online_learning{
+		display: flex;
+		align-items: center;
+		/*width: 500px;*/
+		transform: rotateY(180deg);
+	}
+	#online_learning img{
+		width: 100%;
+	}
+
+
+
+
+/* Footer*/
+	#footer{
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: center;
+		height: 80px;
+		background: #fff;
+		/*border: 2px solid #ebf2f7;*/
+		border-bottom: 2px solid #ebf2f7;
+		padding: 0 10px 0 50px;
+	}
+
+	#footer{
+		position: relative;
+		margin-bottom: 0;
+		border-top: 2px solid #ebf2f7;
+		bottom: 0;
+		width: 100%;
+		height: 70px;
+	}
+	#footer span{
+		width: 500px;
+		margin: 0 20px;
+	}
+	#footer div{
+		font-family: 'Trebuchet MS', sans-serif;
+		
+	}
+	#footer #social_media{
+		width: 200px;
+		display: flex;
+		justify-content: space-around;
+	}
+	#footer div a{
+		text-decoration: none;
+		color: #323c45;
+	}
+	svg{
+		border-radius: 5px;
+		overflow: hidden;
+
+	}

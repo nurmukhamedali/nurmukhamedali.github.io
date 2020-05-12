@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/login.css">
+	<link rel="stylesheet" href="../css/loading.css">
+	
+</head>
+<body>
+	<section id="reg-block" class="container">
+			<div class="front side">
+				<h1>Login</h1>
+				<h2 id="Registration">~A&B~</h2>
+				<div>
+					Don’t have a personal account?  <a onclick="rotate(0)">Registration</a>
+				</div>
+				<div>
+					<label id="email_check" class="error_message"></label>
+					<input id="e-mail" class="input" type="text" name="email" size="20" placeholder="E-mail">
+				</div>
+				<div>
+					<label id="password_check" class="error_message"></label>
+					<input type="password" id="password" class="input" name="password" size="20" placeholder="Password">
+				</div>
+				<div>
+					<button id="signIn">SignIn</button>
+				</div>
+			</div>
+			<div class="back side">
+				<h1>Create Account</h1>
+				<div>
+					Already registred? <a onclick="rotate(1)">Login</a>
+				</div>
+				<div>
+					<label id="email_message" class="error_message"></label>
+					<input id="email" class="input" type="text" name="email" size="20" placeholder="E-mail">
+				</div>
+				<div>
+					<label id="login_message" class="error_message"></label>
+					<input id="user" class="input" type="text" name="login" size="20" placeholder="Username">
+				</div>
+				<div>
+					<label id="password_message" class="error_message"></label>
+					<input type="password" id="valid0" class="input" name="password" size="20" placeholder="Password">
+				</div>
+				<div>
+					<label id="password2_message" class="error_message"></label>
+					<input type="password" id="valid" class="input" name="password" size="20" placeholder="Confirm">
+				</div>
+				<div>
+					<input type="radio" id="male" name="gender" value="mr" checked> 
+					<label for="male" class="gender">Male</label>
+					<input type="radio" id="female" name="gender" value="mr"> 
+					<label for="female" class="gender">Female</label>
+
+				</div>
+				<div>
+					<label id="checkbox_message" class="error_message"></label>
+					<input type="checkbox" id="checkbox"> I have read and agree to <br><a href="#">terms of use</a> and <a href="#">privacy policy</a>
+				</div>
+				<div>
+					<button id="signUp">SignUp</button>
+					<button onclick="ResetForm()">Clear</button> 
+				</div>
+			</div>
+	</section>
+	<script type="text/javascript" src="../js/loading.js"></script>
+	<script type="text/javascript" src="../js/users.js"></script>
+	<script type="text/javascript" src="../js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="https://fonts.googleapis.com/css2?family=Martel&family=Montserrat:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- <link rel="stylesheet" href="../css/login.css"> -->
+	<link rel="stylesheet" href="../css/loading.css">
+	<link rel="stylesheet" href="../css/clock.css">
+	<link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<div id="page">
+	<!-- ##### Header ##### -->
+	<div id="header">
+	  	<div id="logodiv">
+	  		<a href="#" id="logo">
+	  			<img src="../img/Qara.png" alt="Logo" height=65>
+	  		</a> 
+	  	</div>
+	  	<div id="question">
+			<button id="askquestion" onclick="ask()"><img src="" alt="">Ask a Question</button>
+			<input type="text" placeholder="Search for step-by-step explanations to questions, and more..." id="search">
+	  	</div>
+		<span id="profile">
+			Hello, 
+			<a href="#" id="user">Admin</a>
+			<span id="point">
+				<span id="imagePoint"></span>
+				<span id="npoint"></span>
+			</span>
+		</span>
+	</div>
+	<!-- ##### Main Part ##### -->
+	<div id="main">	
+		<!-- ##### Navigation SideBar ##### -->
+		<nav id="nav" class="nav"> 
+			<div id="clock">
+				<div class="clock">
+					<div class="hour">
+						<div class="hr" id="hr"></div>
+					</div>
+					<div class="min">
+						<div class="mn" id="mn"></div>
+					</div>
+					<div class="sec">
+						<div class="sc" id="sc"></div>
+					</div>
+				</div>
+			</div>
+			<a href="main.html">Home</a> 
+			<a href="profile.html">Profile</a>  
+			<a href="#">Store</a>  
+			<a href="#">Support</a>  
+			<a href="contactus.html">Contact Us</a>  
+			<a href="../index.html">About Us</a> 
+		</nav>
+		<!-- ##### Main Part of Main Part ##### -->
+		<main>
+			<ul id="solutions">
+				<!-- Here will be n li with question -->
+			</ul>
+		</main>
+		<div id="buy" class="buy">
+			<div class="buy_now">
+				<div>
+					Qara Premium
+				</div>
+				<span>
+					This is a subscription to free answers, exclusive tasks and services
+				</span>
+				<button>
+					Get Premium Plus
+				</button>
+			</div>
+			
+		</div>
+	</div>
+	<!-- ##### Footer ##### -->
+	<div id="footer">
+		<div>
+			<a href="main.html">
+			  &copy; 2001 – 2020 ООО «A&B» Inc.<br>Все права защищены.
+			</a>
+	  	</div>
+	  	<div id="social_media">
+	  		<a href="https://vk.com/nmirzahan">
+	  			<svg width="24" height="24" style="color: rgb(70, 128, 194);">
+	  				<path d="M15.377 1C21.54 1 23 2.46 23 8.623v6.754C23 21.54 21.54 23 15.377 23H8.623C2.46 23 1 21.54 1 15.377V8.623C1 2.46 2.46 1 8.623 1h6.754zM6.853 7.971H5.24c-.466 0-.544.217-.544.45 0 .42.544 2.531 2.53 5.326 1.32 1.91 3.2 2.934 4.891 2.934 1.025 0 1.15-.233 1.15-.621v-1.444c0-.466.093-.543.419-.543.232 0 .652.124 1.599 1.04 1.087 1.087 1.273 1.584 1.878 1.584h1.6c.465 0 .683-.233.558-.684-.14-.45-.667-1.102-1.35-1.878-.373-.435-.932-.916-1.103-1.15-.233-.31-.17-.434 0-.713-.015 0 1.941-2.764 2.143-3.695.109-.342 0-.59-.481-.59h-1.6c-.403 0-.59.217-.698.45 0 0-.823 1.987-1.972 3.276-.373.372-.543.497-.745.497-.109 0-.249-.125-.249-.466V8.56c0-.404-.124-.59-.465-.59h-2.516c-.248 0-.403.186-.403.373 0 .388.574.481.636 1.568v2.36c0 .512-.093.605-.295.605-.543 0-1.863-2.003-2.655-4.285-.155-.45-.31-.62-.714-.62z" fill="currentColor" fill-rule="nonzero"></path>
+	  			</svg>
+	  		</a>
+	  		<a href="https://www.facebook.com/">
+  				<svg width="24" height="24" style="color: rgb(0, 117, 238);">
+  					<path d="M23 12c0-6.075-4.925-11-11-11S1 5.925 1 12c0 5.49 4.023 10.041 9.281 10.866V15.18H7.488V12h2.793V9.577c0-2.757 1.642-4.28 4.155-4.28 1.204 0 2.462.215 2.462.215v2.707h-1.387c-1.366 0-1.792.848-1.792 1.718V12h3.05l-.487 3.18h-2.563v7.686C18.977 22.041 23 17.49 23 12" fill="currentColor" fill-rule="nonzero"></path>
+  				</svg>
+  			</a>
+	  		<a>
+	  			<svg width="24" height="24" style="color: rgb(0, 172, 237);">
+	  				<path data-v-469cfe6c="" d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1zm2.877 6.298a2.652 2.652 0 00-2.58 3.255A7.524 7.524 0 016.83 7.781a2.66 2.66 0 00-.357 1.332 2.64 2.64 0 001.182 2.205 2.605 2.605 0 01-1.199-.33v.033c0 1.287.913 2.354 2.128 2.601a2.644 2.644 0 01-1.198.044A2.648 2.648 0 009.86 15.51a5.331 5.331 0 01-3.926 1.095 7.389 7.389 0 004.053 1.198c4.879 0 7.546-4.042 7.546-7.545 0-.116 0-.232-.006-.341a5.433 5.433 0 001.326-1.376 5.383 5.383 0 01-1.524.419 2.65 2.65 0 001.166-1.469 5.37 5.37 0 01-1.683.643 2.64 2.64 0 00-1.936-.835z" fill="currentColor" fill-rule="nonzero"></path>
+	  			</svg>
+	  		</a>
+	  		<a href="https://www.instagram.com/abdrakhmanovb_">
+	  			<svg width="24" height="24" style="color: rgb(255, 255, 255); background: radial-gradient(circle at 33% 100%, rgb(254, 211, 115) 4%, rgb(241, 82, 69) 30%, rgb(217, 46, 127) 62%, rgb(155, 54, 183) 85%, rgb(81, 94, 207));">
+	  				<path d="M11.738 1H12.878c2.2.003 2.61.018 3.657.066 1.171.054 1.97.24 2.67.511a5.392 5.392 0 011.949 1.27 5.392 5.392 0 011.269 1.948l.02.054c.257.677.434 1.454.489 2.57l.016.37c.04.926.052 1.49.052 4.035v.835c-.002 2.392-.017 2.795-.066 3.876-.054 1.171-.24 1.97-.511 2.67a5.392 5.392 0 01-1.27 1.949 5.392 5.392 0 01-1.948 1.269l-.054.02c-.677.257-1.454.434-2.57.489l-.37.016c-.927.04-1.49.052-4.035.052h-.835c-2.392-.002-2.795-.017-3.876-.066-1.171-.054-1.97-.24-2.67-.511a5.392 5.392 0 01-1.949-1.27 5.392 5.392 0 01-1.269-1.948l-.02-.054c-.257-.677-.434-1.454-.489-2.57l-.015-.337c-.041-.936-.052-1.48-.053-3.982v-.919c.002-2.394.017-2.797.066-3.878.053-1.156.235-1.95.501-2.643l.01-.027a5.392 5.392 0 011.27-1.949 5.383 5.383 0 011.91-1.254l.038-.015c.69-.268 1.478-.453 2.625-.509l.336-.015c.935-.041 1.48-.052 3.982-.053zm.834 1.982h-1.144c-2.112.001-2.666.012-3.492.047l-.381.017c-1.072.049-1.655.228-2.043.379-.513.2-.88.438-1.264.823a3.396 3.396 0 00-.81 1.233l-.023.056c-.147.384-.317.956-.367 1.984l-.019.415c-.036.846-.046 1.407-.047 3.647v.99c.001 2.11.012 2.664.047 3.49l.017.382c.049 1.072.228 1.655.379 2.042.2.514.438.88.823 1.265.377.377.736.614 1.233.81l.056.023c.388.148.968.321 2.018.369l.41.018c.83.035 1.404.045 3.618.046h.99c2.416-.002 2.792-.015 3.872-.064l.068-.003c1.03-.054 1.595-.228 1.974-.376.514-.2.88-.438 1.265-.823.377-.377.614-.736.81-1.233l.023-.057c.148-.387.321-.967.369-2.017l.018-.41c.035-.83.045-1.404.046-3.618v-.99c-.002-2.416-.015-2.792-.064-3.872l-.003-.068c-.054-1.03-.228-1.595-.376-1.975-.2-.513-.438-.88-.823-1.264a3.396 3.396 0 00-1.233-.81l-.057-.023c-.383-.147-.955-.317-1.983-.367l-.415-.019c-.827-.035-1.38-.046-3.492-.047zM12 6.352a5.649 5.649 0 110 11.297A5.649 5.649 0 0112 6.35zm0 1.981a3.667 3.667 0 100 7.334 3.667 3.667 0 000-7.334zm5.872-3.525a1.32 1.32 0 110 2.64 1.32 1.32 0 010-2.64z" fill="currentColor" fill-rule="nonzero"></path>
+	  			</svg>
+	  		</a>
+	  	</div>
+		<span>
+			This site is using cookies under <a href="#">cookie policy</a>. You can specify conditions of storing and accessing cookies in your browser
+		</span>
+
+	</div>
+</div>
+<script src="../js/loading.js"></script>
+<script src="../js/users.js"></script>
+<script src="../js/admin.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/questions.js"></script>
+
+
+
+</body>
+</html>

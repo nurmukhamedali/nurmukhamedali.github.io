@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<style>
+		.changePlace{
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			width: 300px;
+			align-items: center;
+		}
+		.changePlace *{
+			margin: 10px;
+			padding: 5px;
+		}
+		input{
+			display: block;
+			width: 150px;
+		}
+		#userList{
+			display: flex;
+			width: 650px;
+		}
+		body{
+			background: azure;
+		}
+		button{
+			background-color: skyblue;
+			height: 30px;
+			border: 0;
+			margin: 5px;
+		}
+	</style>
+</head>
+<body>
+	<button id="listAllUsers">
+		All accounts
+	</button>
+
+	<div id="userList">
+		
+	</div>
+	<script src="../js/admin.js"></script>
+	<script src="../js/users.js"></script>
+	<script>
+const listAll = document.getElementById('listAllUsers');
+const body = document.querySelector('body');
+const userList = document.getElementById('userList');
+
+var list = document.createElement('ul');
+var changePlace = document.createElement('div');
+	changePlace.classList.add('changePlace');
+
+
+var AllUsers = [];
+listAll.onclick = () => {
+	listUser();
+}
+function listUser(){
+	var k = 0;
+
+	list.textContent = '';
+	AllUsers = localStorage.getItem('accounts'); // при загрузке сразу поучаем сведения о пользователе
+	AllUsers = JSON.parse(AllUsers); // преобразуем их в его стандартный тип
+    
+    const newUser = document.createElement('button');    
+    list.appendChild(newUser);
+    newUser.textContent = 'New User';
+    newUser.onclick = () => {
+		changePlace.textContent = '';
+    	let i = parseInt(k);
+		let inputName = document.createElement('input');
+				inputName.placeholder = 'Name';
+		let inputEmail = document.createElement('input');
+				inputEmail.placeholder = 'E-mail';
+		let inputPwd = document.createElement('input');
+				inputPwd.placeholder = 'Password';
+		let inputPoint = document.createElement('input');
+				inputPoint.placeholder = 'Point';
+        let setUser = document.createElement('button');
+
+          changePlace.appendChild(inputName);
+          changePlace.appendChild(inputEmail);
+          changePlace.appendChild(inputPwd);
+          changePlace.appendChild(inputPoint);
+          
+          changePlace.appendChild(setUser);
+          	setUser.textContent = 'SET USER';
+      
+          setUser.onclick = function(){
+          	AllUsers.unshift({
+          		name: inputName.value,
+          		email: inputEmail.value,
+          		password: inputPwd.value,
+          		point: inputPoint.value
+          	});
+			
+			localStorage.setItem('accounts', JSON.stringify(AllUsers));
+
+			listUser();
+			
+			changePlace.textContent = '';
+          }
+    };
+
+	for(var item of AllUsers){
+        var listItem = document.createElement('li');
+        var listText = document.createElement('ul');
+        	var userName = document.createElement('li');
+        	var userEmail = document.createElement('li');
+        	var userPwd = document.createElement('li');
+        	var userPoint = document.createElement('li');
+        var listEdit = document.createElement('button');
+        	listEdit.classList.add('edit');
+	 		$(listEdit).attr('data-id', `${k}`); 
+
+        var listDel = document.createElement('button');
+        	listDel.classList.add('del');
+	 		$(listDel).attr('data-id', `${k}`); k++;
+
+        listText.appendChild(userName);
+        	userName.textContent = "Name: " + item.name;
+        listText.appendChild(userEmail);
+        	userEmail.textContent = "Email: " + item.email;
+        listText.appendChild(userPwd);
+        	userPwd.textContent = "Pwd: " + item.password;
+        listText.appendChild(userPoint);
+        	userPoint.textContent = "Point " + item.point;
+
+        listItem.appendChild (listText);
+        listItem.appendChild (listDel);
+        listDel.textContent = 'DEL';
+        listItem.appendChild (listEdit);
+        listEdit.textContent = 'EDIT';
+
+        list.appendChild(listItem);
+    }
+    document.onclick = e => {
+		if (e.target.classList.contains('edit')) {
+			editUser(event.target.dataset.id);
+		}
+		if (e.target.classList.contains('del')) {
+			delUser(event.target.dataset.id);
+		}
+	}
+
+	userList.appendChild(list);
+	userList.appendChild(changePlace);
+}
+function editUser(id){
+		changePlace.textContent = '';
+		let i = parseInt(id);
+		let inputName = document.createElement('input');
+			inputName.value = AllUsers[i].name;
+		let inputEmail = document.createElement('input');
+			inputEmail.value = AllUsers[i].email;
+		let inputPwd = document.createElement('input');
+			inputPwd.value = AllUsers[i].password;
+		let inputPoint = document.createElement('input');
+			inputPoint.value = AllUsers[i].point;
+        let replace = document.createElement('button');
+
+          changePlace.appendChild(inputName);
+          changePlace.appendChild(inputEmail);
+          changePlace.appendChild(inputPwd);
+          changePlace.appendChild(inputPoint);
+          
+          changePlace.appendChild(replace);
+          	replace.textContent = 'REPLACE';
+      
+          replace.onclick = function(){
+            AllUsers[i].name = inputName.value;
+			AllUsers[i].email = inputEmail.value;
+			AllUsers[i].password = inputPwd.value;
+			AllUsers[i].point = inputPoint.value;
+			
+			localStorage.setItem('accounts', JSON.stringify(AllUsers));
+
+			listUser();
+			
+			changePlace.textContent = '';
+          }
+	}
+
+
+
+
+
+
+	</script>
+</body>
+</html>

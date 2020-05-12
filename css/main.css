@@ -1,0 +1,543 @@
+/*/*//*/*Lets Start!*//*/*//*/*/
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #ffffff;	
+	padding: 30px 0 0 0;
+}
+#page{
+	margin: 0 auto;
+	width: 90%;
+	display: grid;
+	grid-auto-columns: 1fr;
+}
+/**hEADER*/
+	#header,
+	#footer{
+		display: flex;
+		min-width: 600px;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		border-radius: 25px;
+		min-height: 80px;
+		background: #fff;
+		/*border: 2px solid #ebf2f7;*/
+		border-bottom: 2px solid #ebf2f7;
+		padding: 0 10px 0 50px;
+	}
+/** logo **/
+	#logodiv{
+		/*flex: 17%;*/
+		height: 95%;
+	}
+	#logodiv a{
+		display: block;
+		height: 65px;
+		margin-right: 20px;
+	}
+/** Question Search and Ask */
+	#question{
+		flex: 45%;
+		min-height: 45px;
+		display: flex;
+		/*border: 2px solid #ebf2f7;*/
+		overflow: hidden;
+		border-radius: 25px;
+		
+	}
+	#askquestion{ /* button */
+		flex: 25%;
+		/*width: 100px;*/
+		border: 0;
+		outline: none;
+		cursor: help;
+		background: #27a3f5;
+		color: white;
+		font-weight: 600;
+		border-right: 2px solid #ebf2f7;
+		border-bottom-left-radius: 25px;
+		border-top-left-radius: 25px;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 100%;
+
+	}
+	#askquestion:hover {
+		font-size: 110%;
+	}
+	#search{ /**input*/
+		flex: 75%;
+		min-width: 300px;
+		border: 0;
+		outline: none;
+		padding-left: 30px;
+		background: #e3ebf2;
+	}
+/*** User data */
+	#profile{
+	flex: 30%;
+	display: flex;
+	min-width: 300px;
+	justify-content: center;
+	align-items: center;
+	font-family: "Montserrat";
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	}
+	/* User name */
+	#user{
+		margin: 0 15px 0 10px;
+	}
+	/**points of user*/
+	#npoint{
+		background: yellow;
+		width: 50px;
+		height: 50px;
+		display: flex;
+		justify-content: center;
+		vertical-align: top;
+		color: gold;
+		text-shadow: 1px 1px 2px black;
+		box-shadow:  2px 2px 5px gray;
+		box-sizing: border-box;
+		border: 3px solid gold;
+		border-radius: 100%;
+	}
+/* Main Body of Page */
+	#main{
+		display: grid;
+		/*flex-wrap: wrap;*/
+		grid-template-columns: 1fr 2fr 1fr;
+	}
+
+/** Navigation Panel **/
+	.nav{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		height: 553px;
+		/*border-radius: 30px;*/
+		/*border: 2px solid #ebf2f7;*/
+		border-right: 2px solid #b9e2fe75;
+		padding-bottom: 25px;
+		/*overflow: hidden;*/
+		margin: 10px 10px 0 0;
+		/*background: ;	*/
+		
+	}
+	.nav a{
+		min-height: 30px;
+		width: 100%;
+		padding: 10px 30px;
+		color: #323c45;
+		font-size: 1.5rem;
+		text-decoration: none;
+		font-family: 'Helvetica',sans-serif;
+	}
+	.nav a:hover{
+		background-color: #b9e2fe75;
+		/*color: #ffffff;*/
+		box-shadow: 0  -15px 15px rgba(255,255,255,0.05),
+					inset 0  -15px 15px rgba(255,255,255,0.05),
+					0  15px 15px rgba(0,0,0,0.3),
+					inset 0  15px 15px rgba(0,0,0,0.3);
+	}
+/*End of navigation Panel*/	
+/** Question included place **/
+	main{
+		flex: 55;
+		height: 553px;
+		overflow: hidden;
+		/*border-left: 2px solid #b9e2fe75;*/
+		margin: 10px 10px 0 10px;
+		background-color: #b9e2fe4d;
+	}
+/**Buy Point*/
+	#buy{
+		display: grid;
+	}
+	.buy_now{
+		margin: 20px 0 0 10px;
+		padding: 20px 10px;
+		height: max-content;
+		min-height: 220px;
+		background: #e3f7ed;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;	
+		align-items: center;	
+		justify-content: space-around;
+		font-family: 'Trebuchet MS',sans-serif;
+	}
+	.buy_now div{
+		display: block;
+		font-size: 2rem;
+		font-weight: 600;
+		color: #323c45;
+	}
+	.buy_now span{
+		font-size: 0.9rem;
+		font-weight: 300;
+		font-family: 'Open Sans','Arial',sans-serif;
+	}
+	.buy_now button{
+		display: block;
+		font-family: 'Trebuchet MS',sans-serif;
+		background: #60d399;
+		color: white;
+		border: 0;
+		border-radius: 20px;
+		width: 80%;
+		height: 40px;
+	}
+/** Footer Design */
+	#footer{
+		position: relative;
+		margin-top: 10px;
+		margin-bottom: 0;
+		border-top: 2px solid #ebf2f7;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		bottom: 0;
+		height: 70px;
+		display: flex;
+		flex-wrap: nowrap;
+		flex-direction: row;
+		justify-content: space-around;
+		align-content: center;
+		align-items: center;
+	}
+	#footer span{
+		width: 50%;
+		margin: 0 20px;
+	}
+	#footer div{
+		flex: 10;
+		width: 25%;
+		font-family: 'Trebuchet MS', sans-serif;
+		
+	}
+	#footer #social_media{
+		flex: 10;
+		width: 20%;
+		display: flex;
+		justify-content: center;
+	}
+	#footer div a{
+		text-decoration: none;
+		margin: 0 5%;
+		color: #323c45;
+	}
+	svg{
+		border-radius: 5px;
+		overflow: hidden;
+
+	}
+/** created questions list design */
+	#solutions{
+		list-style-type: none;
+	}
+	#solutions li{
+		padding: 20px 30px ;
+		height: 160px;
+		border-bottom: 2px solid #b9e2fe75;
+		overflow: hidden;
+	}
+	#solutions li p{
+		font-size: 1.1rem;
+		font-weight: 500;
+		font-family: 'Arial'
+	}
+	#solutions li .delete{
+		position: relative;
+		float: right;
+		margin-top: -20px;
+		margin-right: -20px;		
+	}
+	#solutions li .change{
+		/*position: relative;*/
+		/*right: 0;*/
+		/*margin-top: 0px;*/
+		/*margin-right: -20px;*/
+	}
+	#solutions li .save{
+		/*position: relative;*/
+		/*float: right;*/
+		/*margin-top: -10px;*/
+		/*margin-right: -20px;*/
+	}
+/** search input hide un **/
+	li.hide{
+		display: none;
+	}
+	a.hide{
+		display: none;
+	}
+	mark{
+		background-color: skyblue;
+	}
+/* View Answers window design */
+	.AnsPage{
+		display: block;
+		position: absolute;
+		top: 20%;
+		margin-left: -20px;
+		width: 700px;
+		min-height: 100px;
+		height: max-content;
+		background: white;
+		opacity: 1;
+		color: white;
+		border-radius: 15px;
+		padding: 30px; 
+		transition: 0.5s ease-in-out;
+		z-index: 999;
+	}
+	.AnsPage:hover{
+		box-shadow: 
+					5px 5px 8px black,
+					20px 20px #e3ebf2;
+
+	}
+	.AnsPage q{
+		display: block;
+		background: #27a3f5;
+		height: max-content;
+		font-family: 'Verdana';
+		padding: 15px;
+		margin: 20px;
+		/*border: 4px solid lightyellow;*/
+	}
+	.AnsPage p{
+		display: block;
+		margin: 20px;
+		/*border: 4px solid indigo;*/
+		background: #e3f7ed;
+		color: navy;
+		height: max-content;
+		font-family: 'Verdana';
+		padding: 15px;
+	}
+/* View answers design end */
+/** Ask question window design start */
+	.AskQ{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+		background: white;
+		color: #0c0d0e;
+		border-radius: 10px;
+		font-family: 'Open Sans';
+	}
+	.AskQ *{
+		outline: none;
+	}
+	.AskQ h1{
+		padding: 15px;
+		font-family: 'Trebuchet MS';
+	}
+	.subjects{
+		width: 80%;
+		height: 30px;
+		padding: 0 20px;
+		border-radius: 10px;
+		background: gainsboro;
+		border: 0;
+	}
+	.subjects *{
+		height: 30px;
+		font-size: 1.2rem;
+	}
+	#title_div{
+		width: 80%;
+		height: 90px;
+	}
+	#title_div h3{
+		padding: 5px 20px;
+	}
+	#title_div input{
+		width: 100%;
+		height: 30px;
+		background: gainsboro;
+		border-radius: 10px;
+		padding: 0 20px;
+		border: 0;
+	}
+	#bodie{
+		box-sizing: border-box;
+		display: fixed;
+		width: 80%;
+		margin: 0 auto;
+	}
+	#bodie h3{
+		padding: 5px 20px;
+
+	}
+	#bodie div{
+		margin: 0;
+		height: 200px;
+		overflow: hidden;
+		background: gainsboro;
+		color: black;
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+		padding: 10px;
+		border-radius: 10px;
+	}
+	#bodie div textarea{
+		padding: 10px;
+		flex: 75;
+		height: 200px;
+		border: 0;
+		outline: none;
+		resize: none;
+		background: gainsboro;
+	}
+	#file {
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 0;
+		margin: 0;
+	}
+	#bodie div label{
+		flex: 25;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100px;
+		height: 100px;
+		margin: 0;
+		border: 2px dashed black;
+		border-radius: 5px;
+		opacity: 0.5;
+		transition: 2s ease-in-out;
+	}
+	#bodie div label:hover{
+		border: 2px solid black;
+		opacity: 1;
+	}
+	#bodie div label span img{
+		margin: 0 auto;
+		height: 40px;
+		display: block;
+	}
+	.AskQ button{
+		width: 80%;
+		height: 50px;
+		margin-top: 20px;
+		font-family: 'Open Sans';
+		font-size: 1.2rem;
+		border-radius: 10px;
+		background: navy;
+		color: white;
+		border: 0;
+	}
+	.AskQ button:hover{
+		font-size: 1.25rem;
+	}
+/** End of Design of Ask Question block*/
+
+
+
+
+
+
+/*****************A***D***M***I***N**************************************************************/
+
+.panel{
+	background: lightyellow;
+	display: flex;
+	margin: 20px 0 0 10px;
+    right: 25px;
+    bottom: 90px;
+	height: max-content;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-around;
+	font-family: 'Arial';
+	align-items: center;
+	padding: 30px;
+
+}
+.panel button{
+	display: block;
+	width: 100px;
+	height: 30px;
+	border-radius: 30px;
+	margin: 10px 0;
+}
+.panel input{
+	width: 30px;
+	height: 30px;
+	border: 0;
+	position: relative;
+	background: none;
+}
+.panel label{
+	width: 90%;
+	margin: 10px 0;
+	height: 30px;
+	background: skyblue;
+	border-bottom-right-radius: 30px;
+	border-top-right-radius: 30px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	flex-direction: row-reverse;
+	align-items: center;		
+}
+
+
+
+
+/***********MOBILE***********/
+
+
+
+
+@media screen and (max-width: 1000px) {
+		#main {
+			grid-template-columns: 1fr;
+			/*grid-template-rows: 1fr 2fr 2fr;*/
+
+		}
+		#nav{
+			/*grid-column: 1/3;*/
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: space-around;
+			/*align-items: flex-start;*/
+			height: max-content;
+			padding: 0;
+			margin: 0;
+		}
+		#nav a{
+			width: max-content;
+			padding: 0;
+		}
+		main{
+			min-height: 100vh;
+			margin: 0;
+		}
+		#buy{
+			grid-template-columns: 1fr 1fr;
+		}
+		.buy_now{
+			height: auto;
+		}
+		.AnsPage{
+			top: 10%;
+		}
+	}
+
+
